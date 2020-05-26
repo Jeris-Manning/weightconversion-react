@@ -7,7 +7,7 @@ const Ingredients = () => {
     return (
         <Fragment>
             {ingredients.map((item, idx) => (
-                <option value={ingredientArray[idx][1]} key={idx}>{item[0]}</option>
+                <option value={idx} key={idx}>{ingredients[idx][0]}</option>
             ))}
         </Fragment>
     );

@@ -4,12 +4,7 @@ import Form from "./components/Form";
 import "./App.css";
 
 function App() {
-    return (
-        <div className="App">
-            <header></header>
-        <Form />
-        </div>
-    );
+    return <Form />;
 }
 
 export default App;

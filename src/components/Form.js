@@ -12,11 +12,13 @@ const ConvertForm = () => {
     };
     const [conversion, setConversion] = useState(initialConversion);
     const [display, setDisplay] = useState("0");
-    const { units, quantity, ingredients } = conversion;
+    let { units, quantity, ingredients } = conversion;
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setDisplay((quantity * units * ingredients).toFixed(0));
+        setDisplay(
+            (quantity * units * ingredientArray[ingredients][1]).toFixed(0)
+        );
     };
 
     const handleChange = (e) => {
@@ -25,8 +27,9 @@ const ConvertForm = () => {
     };
 
     return (
-        <Fragment>
-            <h2>Volume --> Weight</h2>
+        <MainDisplay>
+            <h1>Volume to Weight Converter</h1>
+
             <SelectContainer onSubmit={handleSubmit}>
                 <HowMuch>
                     <input
@@ -62,19 +65,32 @@ const ConvertForm = () => {
                     Clear
                 </button>
             </SelectContainer>
-        </Fragment>
+        </MainDisplay>
     );
 };
 
 export default ConvertForm;
+
+const MainDisplay = styled.div`
+    display: flex;
+    background: #B599FF;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    h1 {
+        max-width: 300px;
+    }
+`;
 
 const SelectContainer = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: space-around;
-    max-width: 200px;
-    border: 4px green solid;
+
+    border: 4px #FFF473 solid;
     border-radius: 8px;
     padding: 20px;
     background: AquaMarine;
@@ -85,7 +101,7 @@ const SelectContainer = styled.form`
 
     button {
         margin-top: 10px;
-        background: mediumAquaMarine;
+        background: #FF8466;
         font-size: 1.3rem;
         font-weight: 600;
         box-shadow: none;
