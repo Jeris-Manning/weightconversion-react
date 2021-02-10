@@ -1,17 +1,17 @@
-import React, { useState, Fragment } from "react";
-import { ingredientArray } from "../utility/arrays";
-import Ingredients from "./Ingredients";
-import Units from "./Units";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import { ingredientArray } from '../utility/arrays';
+import Ingredients from './Ingredients';
+import Units from './Units';
+import styled from 'styled-components';
 
 const ConvertForm = () => {
     const initialConversion = {
-        quantity: "",
+        quantity: '',
         units: 1,
         ingredients: 0,
     };
     const [conversion, setConversion] = useState(initialConversion);
-    const [display, setDisplay] = useState("0");
+    const [display, setDisplay] = useState('0');
     let { units, quantity, ingredients } = conversion;
 
     const handleSubmit = (event) => {
@@ -23,7 +23,7 @@ const ConvertForm = () => {
 
     const handleChange = (e) => {
         setConversion({ ...conversion, [e.target.name]: e.target.value });
-        setDisplay("0");
+        setDisplay('0');
     };
 
     return (
@@ -60,7 +60,7 @@ const ConvertForm = () => {
                     type="clear"
                     onClick={() => {
                         setConversion(initialConversion);
-                        setDisplay("0");
+                        setDisplay('0');
                     }}>
                     Clear
                 </button>
@@ -73,7 +73,7 @@ export default ConvertForm;
 
 const MainDisplay = styled.div`
     display: flex;
-    background: #B599FF;
+    background: #b599ff;
     flex-direction: column;
     // justify-content: center;
     align-items: center;
@@ -90,7 +90,7 @@ const SelectContainer = styled.form`
     align-items: center;
     align-content: space-around;
 
-    border: 4px #FFF473 solid;
+    border: 4px #fff473 solid;
     border-radius: 8px;
     padding: 20px;
     background: AquaMarine;
@@ -101,7 +101,7 @@ const SelectContainer = styled.form`
 
     button {
         margin-top: 10px;
-        background: #FF8466;
+        background: #ff8466;
         font-size: 1.3rem;
         font-weight: 600;
         box-shadow: none;
