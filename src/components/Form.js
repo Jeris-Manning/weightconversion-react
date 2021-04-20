@@ -100,7 +100,7 @@ const SelectContainer = styled.form`
     font-size: 1.3rem;
     font-weight: 600;
     box-shadow: none;
-    border-color: green;
+    border-color: black;
     width: 50%;
     color: #0F2433;
   }
